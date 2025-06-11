@@ -44,7 +44,7 @@ class ExecutionSpecsTransitionTool(TransitionTool):
     """
 
     default_binary = Path("ethereum-spec-evm-resolver")
-    detect_binary_pattern = re.compile(r"^ethereum-spec-evm-resolver\b")
+    detect_binary_pattern = re.compile(r"^ethereum-spec-evm\b")
     t8n_use_server: bool = True
     server_dir: Optional[TemporaryDirectory] = None
 
