@@ -24,7 +24,8 @@ def pytest_configure(config: pytest.Config) -> None:
 
     """
     evm_bin = config.getoption("evm_bin", default=None)
-    if evm_bin and "resolver" not in str(evm_bin):
+    if not evm_bin or "resolver" not in str(evm_bin):
+        # Missing evm_bin implies the use of EELS t8n
         # evm_bin is not set for the framework tests: always set the env var.
         return
 
